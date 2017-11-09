@@ -1,0 +1,52 @@
+{
+  "name": "csgo-hud",
+  "version": "0.0.8",
+  "description": "CSGO Custom HUD",
+  "author": {
+    "name": "redsparr0w",
+    "steam": "http://steamcommunity.com/id/redsparr0w",
+    "github": "https://github.com/RedSparr0w"
+  },
+  "maintainers": [
+    {
+      "name": "redsparr0w",
+      "email": "admin@redsparr0w.com"
+    }
+  ],
+  "bugs": {
+    "email": "admin@redsparr0w.com",
+    "url": "https://github.com/RedSparr0w/csgo-hud/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedSparr0w/csgo-hud.git"
+  },
+  "homepage": "http://redsparr0w.com",
+  "dependencies": {	
+  },
+  "devDependencies": {
+  },
+  "license": "MIT",
+  "scripts" : {
+    "test": "nwbuild -r ./ || npm install nw-builder -g && nwbuild -r ./ || echo \u001b[31;1mEnsure you have installed Node.js then try again\u001b[0m && pause",
+    "start": "npm test",
+    "preinstall": "npm list nw-builder -g || npm install nw-builder -g || echo \u001b[31;1mEnsure you have installed Node.js then try again\u001b[0m && pause",
+    "build": "nwbuild ./ -o ../builds -p win64,win32 --winIco ./logo.ico || npm install nw-builder -g && nwbuild ./ -o ../builds -p win64,win32 --winIco ./logo.ico || echo \u001b[31;1mEnsure you have installed Node.js then try again\u001b[0m && pause",
+    "postbuild": "postbuild.bat"
+  },
+  "main": "index.html",
+  "chromium-args": "--disable-gpu --force-cpu-draw",
+  "window": {
+    "title": "CSGO HUD",
+    "icon": "logo.png",
+    "toolbar": false,
+    "frame": false,
+    "width": 1920,
+    "height": 1080,
+    "position": "center",
+    "transparent": true
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
